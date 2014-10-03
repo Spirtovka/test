@@ -16,14 +16,13 @@ include 'add.php';
 	<?
 		$add_user = $_POST['add_user'];
 		if (isset($add_user)) {
-			$link =  mysql_connect('localhost', 'root', '');
-			mysql_select_db('user-base',$link);
-			$add_table = AddUser::Add();
-			if ($add_my) {
+			$add_table = new AddUser();
+			if ($add_table->add_my) {
+				$add_table->Add();
 				echo "Данные успешно добавлены в таблицу...";
 			}
 			else {
-			echo "Данные не добавлены в таблицу..." . mysql_error();
+			die ('Error: ');
 			}
 		}
 	?>
