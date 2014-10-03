@@ -1,8 +1,7 @@
 <?
 	class AddUser {
-		public $add;
-
+		public $add_my;
 		public function Add() {
-			$add = mysql_query("INSERT INTO `table_user` (`name`, `surname`, `age`, `id`) VALUES('$name', '$surname', '$age', '$id')");
+			$add_my = mysql_query("INSERT INTO `table_user` (`name`, `surname`, `age`, `id`) VALUES ('".$_POST['name']."','".$_POST['surname']."','".$_POST['age']."','".$_POST['id']."')");
 		}
 	}
